@@ -1,0 +1,60 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width,initial-scale=1" />
+  <title>Editor — TheLostSpot</title>
+  <link href="https://fonts.googleapis.com/css2?family=Cinzel:wght@400;700&family=Uncial+Antiqua&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="css/styles.css">
+  <style>
+    .admin-shell{padding:2rem}
+    .login-box{max-width:420px;margin:2rem auto;background:var(--panel);padding:1.2rem;border-radius:10px;border:1px solid rgba(255,255,255,0.04)}
+    .form-row{display:flex;gap:.5rem;margin-top:.6rem}
+    input[type="text"], input[type="password"]{flex:1;padding:.5rem;border-radius:6px;border:1px solid rgba(255,255,255,0.03);background:transparent;color:#eee}
+    label{display:block;color:var(--muted);font-size:.9rem}
+    button{background:var(--accent);color:#111;border:none;padding:.5rem .8rem;border-radius:6px;cursor:pointer}
+    .product-list{margin-top:1rem}
+    .product-item{display:flex;justify-content:space-between;gap:.5rem;padding:.6rem;border-radius:8px;background:var(--glass);margin-bottom:.5rem}
+    .danger{background:#a33;color:#fff}
+    .controls{display:flex;gap:.5rem;flex-wrap:wrap;margin-top:.75rem}
+    .note{color:var(--muted);margin-top:.75rem}
+  </style>
+</head>
+<body class="dark">
+  <div class="container admin-shell">
+    <a href="/" style="color:var(--muted);text-decoration:none">&larr; Back to site</a>
+    <h2 style="margin-top:.5rem">Editor — TheLostSpot</h2>
+
+    <div id="login" class="login-box">
+      <label for="pwd">Enter editor password</label>
+      <div class="form-row">
+        <input id="pwd" type="password" placeholder="Password" />
+        <button id="btnLogin">Unlock</button>
+      </div>
+      <p class="note small">This editor uses a secure server-side password. You will be asked to give the password (kept by the server) to edit.</p>
+    </div>
+
+    <div id="editor" style="display:none">
+      <section>
+        <h3>Products</h3>
+        <div class="controls">
+          <input id="newName" type="text" placeholder="Product name" />
+          <input id="newPrice" type="text" placeholder="Price (e.g. Rs. 1,200)" />
+          <button id="btnAdd">Add</button>
+        </div>
+        <div class="product-list" id="productList"></div>
+
+        <div style="margin-top:1rem">
+          <button id="btnSave">Save changes (publish)</button>
+          <button id="btnRefresh">Refresh</button>
+          <button id="btnClear" class="danger">Clear all</button>
+        </div>
+
+        <p class="note small">Changes are published to the site when you click Save. The server makes a commit to the repository. For security, the server requires the editor password.</p>
+      </section>
+    </div>
+  </div>
+
+  <script src="js/admin.js"></script>
+</body>
+</html>

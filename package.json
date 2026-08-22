@@ -1,0 +1,11 @@
+{
+  "name": "thelostspot-showcase",
+  "version": "1.0.0",
+  "private": true,
+  "scripts": {
+    "start": "vercel dev"
+  },
+  "dependencies": {
+    "@octokit/rest": "^19.0.7"
+  }
+}

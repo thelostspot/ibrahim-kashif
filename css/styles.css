@@ -1,0 +1,42 @@
+/* styles.css - dark gothic theme */
+:root{
+  --bg:#0b0b0d;
+  --panel:#0f0f12;
+  --muted:#9b9b9b;
+  --accent:#a58bff;
+  --card-bg:rgba(255,255,255,0.03);
+  --glass:rgba(255,255,255,0.03);
+}
+
+*{box-sizing:border-box}
+html,body{height:100%;margin:0;font-family: 'Cinzel', serif;background:linear-gradient(180deg,var(--bg),#070708);color:#eee;line-height:1.4}
+.container{max-width:1100px;margin:0 auto;padding:1rem}
+
+.header-inner{display:flex;justify-content:space-between;align-items:center;gap:1rem}
+.brand h1{font-family:'Uncial Antiqua', 'Cinzel', serif;margin:0;font-size:1.6rem;letter-spacing:1px}
+.subtitle{margin:0;color:var(--muted);font-size:0.9rem}
+.contact a{color:var(--muted);text-decoration:none;margin-left:0.75rem;font-size:0.9rem}
+.contact a:hover{color:var(--accent)}
+
+.site-header{padding:1rem 0;border-bottom:1px solid rgba(255,255,255,0.03)}
+.hero{padding:2rem 0;text-align:center}
+.hero h2{font-size:2rem;margin:0 0 0.25rem;color:var(--accent)}
+.hero .lead{color:var(--muted);max-width:700px;margin:0.5rem auto}
+
+.products-grid{display:grid;grid-template-columns:repeat(auto-fill,minmax(220px,1fr));gap:1rem;padding:1rem 0}
+.product-card{background:var(--card-bg);padding:1rem;border-radius:10px;border:1px solid rgba(255,255,255,0.03);box-shadow:0 6px 18px rgba(0,0,0,0.6);display:flex;flex-direction:column;justify-content:space-between}
+.product-name{font-weight:700;font-size:1.05rem;margin-bottom:0.5rem;color:#fff}
+.product-price{font-size:1.15rem;color:var(--accent);font-weight:700;text-align:right}
+
+.foot-note{padding:1.5rem 0;text-align:center;color:var(--muted)}
+.site-footer{padding:1rem 0;border-top:1px solid rgba(255,255,255,0.03);text-align:center;color:var(--muted)}
+.admin-link{background:transparent;border:1px solid rgba(255,255,255,0.04);padding:0.4rem 0.6rem;border-radius:6px;color:var(--muted);text-decoration:none;margin-left:.5rem}
+.admin-link:hover{color:#fff; border-color:var(--accent)}
+
+.small{font-size:.9rem}
+
+@media (max-width:600px){
+  .header-inner{flex-direction:column;align-items:flex-start}
+  .contact{display:flex;flex-wrap:wrap;gap:.25rem}
+  .hero h2{font-size:1.4rem}
+}
